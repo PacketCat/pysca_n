@@ -20,10 +20,10 @@ root.title('Сканнер нахуй')
 f = Frame(width=100)
 f.grid(row=1,column=0,sticky='n, e, s, w')
 try:
-	ff = ImageTk.PhotoImage(Image.open(localp + 'scanthumb.png').resize((363,500),Image.ANTIALIAS))
+	ff = ImageTk.PhotoImage(Image.open(localp + '/scanthumb.png').resize((363,500),Image.ANTIALIAS))
 except:
 	os.system('scanimage >~/.local/share/scanthumb.png --format=png --speed=yes')
-	ff = ImageTk.PhotoImage(Image.open(localp + 'scanthumb.png').resize((363,500),Image.ANTIALIAS))
+	ff = ImageTk.PhotoImage(Image.open(localp + '/scanthumb.png').resize((363,500),Image.ANTIALIAS))
 img = Label(image=ff)
 img.image=ff
 img.grid(row=1,column=1)
@@ -34,7 +34,7 @@ def preview(imgd, buttons):
 	buttons[2]['state'] = 'disabled'
 	buttons[3]['state'] = 'disabled'
 	os.system('scanimage >~/.local/share/scanthumb.png --format=png --speed=yes')
-	ff = ImageTk.PhotoImage(Image.open(localp + 'scanthumb.png').resize((363,500),Image.ANTIALIAS))
+	ff = ImageTk.PhotoImage(Image.open(localp + '/scanthumb.png').resize((363,500),Image.ANTIALIAS))
 	imgd.destroy()
 	img = Label(image=ff, width=50)
 	img.image=ff
